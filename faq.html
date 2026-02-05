@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>FAQs | Manthatisi Guesthouse & Self-Catering Units</title>
+
+  <meta name="description" content="Manthatisi Self-Catering Units and Manthatisi Guesthouse offer professional hospitality services and present the 4th edition of Lovers & Friends." />
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Manthatisi Logo">
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+     <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section class="qa-hero">
+  <h2>Frequently Asked Questions</h2>
+  <p>Everything you need to know about Lovers & Friends Lifestyle Chill-out.</p>
+</section>
+
+<section class="faq faq-section">
+  <details open>
+    <summary>What is Lovers & Friends Lifestyle Chill-out?</summary>
+    <p>
+      Lovers & Friends Lifestyle Chill-out is a premium lifestyle event hosted at
+      Manthatisi Self-Catering Units. It is an all-VIP inclusive experience offering
+      good food, fashionable lifestyle, great people, and great vibes at one of the
+      most exquisite venues in Maseru.
+    </p>
+  </details>
+
+  <details>
+    <summary>Is it a paying event and how do I purchase a ticket?</summary>
+    <p>
+      Yes, this is a paying event. Payments can be made via Mpesa, Ecocash, or cash.
+      Please note that tickets are limited.
+    </p>
+  </details>
+
+  <details>
+    <summary>What is the age group and are there any restrictions?</summary>
+    <p>
+      The event is strictly for guests between the ages of 18 and 50 years.
+      Valid identification may be required at the entrance.
+    </p>
+  </details>
+
+  <details>
+    <summary>Will food and drinks be allowed at the venue?</summary>
+    <p>
+      Outside food and drinks are not allowed. Quality food and drinks will be
+      available for purchase at the venue.
+    </p>
+  </details>
+
+  <details>
+    <summary>Do I need to bring my own chair?</summary>
+    <p>
+      No. Lovers & Friends Lifestyle Chill-out is an all-VIP experience.
+      Seating will be provided for every patron on the day of the event.
+    </p>
+  </details>
+</section>
+
+<section class="qa-hero">
+  <h2>Community Questions & Answers</h2>
+  <p>Have a question not listed above? Ask below and get answers from the community.</p>
+
+  <form id="questionForm">
+    <input type="text" id="questionInput" placeholder="Type your question..." required />
+    <button type="submit">Ask Question</button>
+  </form>
+</section>
+
+<section id="qaList" class="qa-section"></section>
+
+
+<footer>
+  <p>&copy; 2026 Manthatisi. All rights reserved.</p>
+  <p>Self-Catering Units • Guesthouse • Events • Lesotho</p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/p/All-Things-Manthatisi" aria-label="Manthatisi on Facebook" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+    </a>
+
+    <a href="#" aria-label="Manthatisi on Instagram" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+
+    <a href="#" aria-label="Manthatisi on Twitter" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)">
+    </a>
+  </div>
+</footer>
+
+<a
+  href="https://wa.me/26658499983"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat with Manthatisi on WhatsApp"
+>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<script>
+  
+// ===== AUTO CLEAR Q&A AFTER X DAYS =====
+const CLEAR_AFTER_DAYS = 7; // 🔧 change this if needed
+const MS_IN_DAY = 24 * 60 * 60 * 1000;
+
+const savedTime = localStorage.getItem("qaTimestamp");
+
+if (savedTime) {
+  const now = Date.now();
+  const age = now - Number(savedTime);
+
+  if (age > CLEAR_AFTER_DAYS * MS_IN_DAY) {
+    localStorage.removeItem("qaData");
+    localStorage.removeItem("qaTimestamp");
+  }
+}
+let qaData = JSON.parse(localStorage.getItem("qaData")) || [];
+localStorage.setItem("qaTimestamp", Date.now());
+
+
+const qaList = document.getElementById("qaList");
+const form = document.getElementById("questionForm");
+const input = document.getElementById("questionInput");
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  qaData.push({ question: input.value, answers: [] });
+  input.value = "";
+  saveAndRender();
+});
+
+function addAnswer(index, answerText) {
+  qaData[index].answers.push(answerText);
+  saveAndRender();
+}
+function saveAndRender() {
+  localStorage.setItem("qaData", JSON.stringify(qaData));
+  localStorage.setItem("qaTimestamp", Date.now());
+  renderQA();
+}
+
+
+function renderQA() {
+  qaList.innerHTML = "";
+  qaData.forEach((item, index) => {
+    qaList.innerHTML += `
+      <div class="qa-box">
+        <strong>Q:</strong> ${item.question}
+
+        ${item.answers.map(a => `<div class="answer"><strong>A:</strong> ${a}</div>`).join("")}
+
+        <form class="answer-form" onsubmit="event.preventDefault(); addAnswer(${index}, this.answer.value); this.reset();">
+          <input type="text" name="answer" placeholder="Write an answer..." required />
+          <button type="submit">Answer</button>
+        </form>
+      </div>
+    `;
+  });
+}
+
+renderQA();
+</script>
+
+</body>
+</html>

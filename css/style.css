@@ -1,0 +1,1272 @@
+
+    :root {
+      /* Manthatisi Brand */
+      --black: #0e0e0e;
+      --gold: #c9a24d;
+      --white: #ffffff;
+
+      /* Lovers & Friends 2026 (Amalfi Coast Elegance) */
+      --lf-blue: #1ba3d6;
+      --lf-yellow: #f4c430;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+      background-color: var(--white);
+    }
+
+    header {
+      background-color: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    nav a {
+      color: var(--black);
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 100px 40px;
+      text-align: center;
+      background-color: #fafafa;
+    }
+
+    .hero h2 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 30px auto;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 12px 32px;
+      background-color: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+      border-radius: 2px;
+    }
+
+    section {
+      padding: 70px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 25px;
+      border-radius: 4px;
+      background-color: var(--white);
+    }
+
+    /* Lovers & Friends Event Section */
+    .event {
+      background: linear-gradient(135deg, var(--lf-blue), var(--lf-yellow));
+      color: #0e0e0e;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .event h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .event p {
+      max-width: 700px;
+      margin: 15px auto;
+      font-weight: 500;
+    }
+
+    .event .cta {
+      background-color: var(--white);
+      color: var(--lf-blue);
+      margin-top: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery div {
+      background-color: #f2f2f2;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #777;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq details {
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background-color: #fafafa;
+    }
+
+    footer {
+      background-color: #f7f7f7;
+      padding: 30px 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+    }
+    .logo img {
+  height: 200px;        /* clean, not too big */
+  width: 200p;
+  display: block;
+}
+
+header {
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.event-poster {
+  max-width: 420px;
+  margin: 30px auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.event-poster img {
+  width: 100%;
+  display: block;
+}
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  background: #fafafa;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-slider h2 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  color: var(--black);
+}
+
+.hero-slider p {
+  font-size: 1.1rem;
+  color: #555;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 25px;
+  border-radius: 6px;
+  background-color: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.event-poster {
+  animation: floatIn 1.2s ease forwards;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.cta-strip {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.cta-strip h3 {
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+}
+
+.cta-strip p {
+  color: #ccc;
+  margin-bottom: 25px;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links img {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  object-fit: contain;
+}
+.social-links a:hover {
+  background-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.social-links a:hover img {
+  filter: invert(1);
+}.map-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 900px; /* controls how wide it looks */
+  height: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+#questionForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+#questionForm input {
+  padding: 12px;
+  width: 60%;
+  max-width: 400px;
+}
+
+#questionForm button {
+  padding: 12px 20px;
+  background: #c9a24d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.qa-box {
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.answer-form {
+  margin-top: 15px;
+}
+
+.answer {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #c9a24d;
+}
+/* ===== GALLERY PAGE ===== */
+
+.gallery-section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-section h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.gallery-item {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+/* Image — SAME SIZE ALWAYS */
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;   /* 🔥 key for same size */
+  display: block;
+}
+
+/* Caption */
+.gallery-item figcaption {
+  padding: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #444;
+  background: #fafafa;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+
+  .gallery-section {
+    padding: 50px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    height: 150px; /* smaller images on mobile */
+  }
+
+  .gallery-item figcaption {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1 per row on very small phones */
+  }
+
+  .gallery-item img {
+    height: 160px;
+  }
+}
+.gallery-item {
+  border-radius: 4px;
+}
+/* ===== SWIPEABLE MOBILE GALLERY ===== */
+@media (max-width: 768px) {
+
+  .gallery-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+
+    /* smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+  }
+
+  .gallery-item {
+    min-width: 80%;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+}
+.gallery-item {
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:active {
+  transform: scale(0.98);
+}
+/* ===== FAQ / Q&A PAGE ===== */
+
+.qa-hero {
+  text-align: center;
+  background: #fafafa;
+  padding: 80px 40px;
+}
+
+.qa-hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.qa-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+}
+
+.faq-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq details {
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq details[open] {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ================================
+   LUXURY GALLERY – MANHATITISI
+================================ */
+
+.gallery-section {
+  padding: 90px 40px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.gallery-section h3 {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 60px;
+  color: var(--black);
+}
+
+/* Desktop / Large screens */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+}
+
+/* Gallery Card */
+.gallery-item {
+  position: relative;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Subtle luxury hover */
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* Image – SMALL & REFINED */
+.gallery-item img {
+  width: 100%;
+  height: 140px;              /* 🔥 smaller images */
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);     /* subtle, not flashy */
+  filter: brightness(1);
+}
+
+/* Caption – MINIMAL & ELEGANT */
+.gallery-item figcaption {
+  padding: 12px 14px;
+  font-size: 0.78rem;
+  text-align: center;
+  letter-spacing: 0.6px;
+  color: #555;
+  background: #fafafa;
+  text-transform: uppercase;
+}
+
+/* ================================
+   MOBILE – SWIPEABLE & PREMIUM
+================================ */
+
+@media (max-width: 768px) {
+
+  .gallery-section {
+    padding: 60px 20px;
+  }
+
+  .gallery-grid {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-item {
+    min-width: 75%;
+    scroll-snap-align: center;
+  }
+
+  .gallery-item img {
+    height: 160px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .gallery-item {
+    min-width: 85%;
+  }
+
+  .gallery-item img {
+    height: 150px;
+  }
+}
+/* ===== FULLSCREEN IMAGE MODAL ===== */
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-modal.show {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  animation: zoomIn 0.35s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 42px;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ===== EVENT LEFT SLIDER ===== */
+
+.event-slider {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+.event-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.event-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.event-slide.active {
+  opacity: 1;
+}
+
+/* dark overlay */
+.event-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.6)
+  );
+  z-index: 1;
+}
+
+/* Caption */
+.event-caption {
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+  max-width: 70%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.event-caption.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Controls */
+.event-controls {
+  position: absolute;
+  bottom: 35px;
+  left: 40px;
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.event-controls span {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.event-controls span:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .event-slider {
+    height: 55vh;
+  }
+
+  .event-caption {
+    font-size: 1.2rem;
+    left: 25px;
+    bottom: 70px;
+  }
+
+  .event-controls {
+    left: 25px;
+  }
+}
+.event-layout {
+  min-height: 100vh;
+  align-items: stretch;
+}
+/* ===== AMALFI COAST GRADIENT TEXT ===== */
+
+.amalfi-gradient {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #1ba3d6,   /* amalfi blue */
+    #3ddad7,   /* tropical aqua */
+    #f4c430,   /* lemon yellow */
+    #f28c68,   /* sunset coral */
+    #c9a24d    /* gold luxury */
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: amalfiFlow 6s ease infinite;
+}
+
+/* subtle flowing animation */
+@keyframes amalfiFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* ===== EVENT SLIDER – PUSH TRANSITION ===== */
+
+.event-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.event-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.event-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* overlay */
+.event-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.6)
+  );
+  z-index: 1;
+}
+
+/* Caption */
+.event-caption {
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+  max-width: 70%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.event-caption.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Controls */
+.event-controls {
+  position: absolute;
+  bottom: 35px;
+  left: 40px;
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.event-controls span {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.event-controls span:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .event-slider {
+    min-height: 55vh;
+  }
+
+  .event-caption {
+    font-size: 1.2rem;
+    left: 25px;
+    bottom: 70px;
+  }
+
+  .event-controls {
+    left: 25px;
+  }
+}
+/* ===== WHAT TO EXPECT SECTION ===== */
+.what-to-expect {
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.what-to-expect h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  color: var(--black);
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.expect-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.expect-icon {
+  font-size: 1.2rem;
+  background: #f9f9f9;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.expect-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.expect-item strong {
+  color: var(--gold);
+  font-size: 0.95rem;
+}
+
+/* Adjust for larger screens to make it a 2-column grid if desired */
+@media (min-width: 1200px) {
+  .expect-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+}
+/* style.css updates */
+
+header {
+  padding: 30px 20px; /* More breathing room for luxury feel */
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px); /* Modern glass effect */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 300px;        /* Increased size for better visibility */
+  width: auto;         /* Fixed the 200p typo */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav a {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-left: 35px;
+  position: relative;
+}
+
+/* Luxury hover underline */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}/* events.html <style> or style.css */
+
+.event-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Weighted towards the beautiful imagery */
+  background: #fff;
+}
+
+.event-slider {
+  box-shadow: 20px 0 50px rgba(0,0,0,0.05); /* Soft shadow depth */
+}
+
+.event-slide {
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1); /* Silkier transition */
+}
+
+/* Darker, more dramatic gradient for white text legibility */
+.event-slider::after {
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.1) 0%, 
+    rgba(0,0,0,0.2) 50%, 
+    rgba(0,0,0,0.7) 100%
+  );
+}
+
+.event-controls span {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.event-controls span:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}/* Improved Content Spacing */
+.event-content {
+  padding: 80px 10%; /* Percentage-based padding for better balance */
+}
+
+.event-title {
+  font-family: 'Playfair Display', serif; /* Suggest adding this Google Font for luxury */
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px;
+}
+
+.section-subtitle {
+  color: var(--gold) !important;
+  border-bottom: 1px solid var(--gold);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+.expect-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fcfcfc;
+  transition: background 0.3s ease;
+}
+
+.expect-item:hover {
+  background: #f5f5f5;
+}
+
+.expect-text h4 {
+  color: var(--black);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* style.css */
+
+header {
+  /* Reduced vertical padding to 10px to save space */
+  padding: 10px 40px; 
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Remove any sticky/fixed positioning so it scrolls away */
+  position: relative; 
+  z-index: 100;
+}
+
+.logo img {
+  /* 70px is the 'Goldilocks' zone: big enough to see detail, small enough to keep the nav slim */
+  height: 300px; 
+  width: auto; /* Fixed the '200p' typo */
+  display: block;
+}
+
+nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: var(--black);
+  transition: color 0.3s ease;
+}/* events.html <style> or style.css */
+
+.event-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  /* Adjusting height to account for the slimmer 90px header */
+  min-height: calc(100vh - 90px); 
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 15px 20px; /* Even tighter spacing for mobile */
+  }
+  
+  .logo img {
+    height: 145px; /* Scale logo down slightly for smaller screens */
+  }
+}/* ===== LUXURY GALLERY SECTION ===== */
+.gallery-section {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-section h3 {
+  font-family: 'Playfair Display', serif; /* Pair with a luxury serif font */
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  color: var(--black);
+}
+
+/* Grid for Desktop */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 350px; /* Consistent height for a professional look */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Elegant Minimal Caption */
+.gallery-item figcaption {
+  padding: 15px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gray);
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+/* ===== MOBILE VIEW: ONE PHOTO AT A TIME ===== */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: flex; /* Switch to horizontal layout */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Forces 'snapping' to the photo */
+    gap: 0; /* Remove gap so photos touch for seamless sliding */
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none; /* Hide the bulky scrollbar */
+  }
+
+  .gallery-item {
+    min-width: 100%; /* Show exactly one photo */
+    scroll-snap-align: center; /* Center the photo on screen */
+    border-radius: 0; /* Full-bleed look on mobile */
+    box-shadow: none;
+  }
+
+  .gallery-item img {
+    height: 70vh; /* Taller images on mobile for 'Full-Screen' feel */
+  }
+}
