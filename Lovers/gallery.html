@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Manthatisi Accommodation & Events</title>
+
+  <meta name="description" content="Manthatisi Self-Catering Units and Manthatisi Guesthouse offer professional hospitality services and present the 4th edition of Lovers & Friends." />
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Manthatisi Logo">
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+     <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header><section id="gallery" class="gallery-section">
+  <h3>Gallery</h3>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="images/lovers (18).jpeg" alt="Self-Catering Units">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/lovers (17).jpeg" alt="Guesthouse Rooms">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/lovers (16).jpeg" alt="Outdoor Areas">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/lovers (15).jpeg" alt="Event Setup">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/lovers (14).jpeg" alt="Hospitality Spaces">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/lovers (13).jpeg" alt="Lovers & Friends Event">
+      <figcaption>Lovers & Friends Event</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+
+<footer>
+  <p>&copy; 2026 Manthatisi. All rights reserved.</p>
+  <p>Self-Catering Units • Guesthouse • Events • Lesotho</p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/p/All-Things-Manthatisi" aria-label="Manthatisi on Facebook" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+    </a>
+
+    <a href="#" aria-label="Manthatisi on Instagram" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+
+    <a href="#" aria-label="Manthatisi on Twitter" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)">
+    </a>
+  </div>
+</footer>
+
+<a
+  href="https://wa.me/26658499983"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat with Manthatisi on WhatsApp"
+>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.classList.add("show");
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => modal.classList.remove("show");
+
+  modal.onclick = (e) => {
+    if (e.target !== modalImg) {
+      modal.classList.remove("show");
+    }
+  };
+</script>
+
+</body>
+</html>
